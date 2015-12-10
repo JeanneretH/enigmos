@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enigmas\Components\Command.cs" />
+    <Compile Include="Enigmas\Components\PC.cs" />
+    <Compile Include="Enigmas\HackingEnigmaPanel.cs" />
     <Compile Include="Enigmas\SeptDifferencesEnigmaPanel.cs">
       <SubType>Component</SubType>
     </Compile>
