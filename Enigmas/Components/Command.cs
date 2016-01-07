@@ -10,6 +10,7 @@ namespace Cpln.Enigmos.Enigmas.Components
         public static Command DEFAULT = new Command("", "Erreur : commande inconnue");
         private string strNom;
         private string strResultat;
+        private PC destination = null;
 
         public Command(string nom, string resultat)
         {
@@ -20,6 +21,21 @@ namespace Cpln.Enigmos.Enigmas.Components
         public string getNom()
         {
             return strNom;
+        }
+
+        public string getResultat()
+        {
+            return strResultat;
+        }
+
+        public void setDestination(PC destination)
+        {
+            this.destination = destination;
+        }
+
+        public PC getDestination()
+        {
+            return destination;
         }
     }
 }
