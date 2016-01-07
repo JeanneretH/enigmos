@@ -20,6 +20,11 @@ namespace Cpln.Enigmos.Enigmas.Components
             commands.Add(new Command(nom, resultat));
         }
 
+        public void AddCommand(string nom, string resultat, PC destination)
+        {
+            commands.Add(new Command(nom, resultat, destination));
+        }
+
         /// <summary>
         /// Vérifie que la commande existe
         /// </summary>
@@ -45,6 +50,35 @@ namespace Cpln.Enigmos.Enigmas.Components
             */
 
             return Command.DEFAULT;
+        }
+
+        public static PC Laptop()
+        {
+            PC laptop = new PC();
+
+            laptop.AddCommand("help", "Liste des commandes :\nhelp\nscan /*le nom de ce que vous voulez scanner*\nhack /*le nom du pc cible\n");
+            laptop.AddCommand("scan", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /reseau");
+            laptop.AddCommand("scan/", "Erreur de syntaxe de la commande scan \nexemple: /reseau");
+            laptop.AddCommand("scan /", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /reseau");
+            laptop.AddCommand("scan /reseau", "Scan du reseau terminer. Vous pouvez desormais scanner les différents étages du reseau dans l'ordre de l'autorité des appareils pour ensuite en prendre le contrôle.\nPour cela utilisé la commande : scan /*le nom du groupe de travail*");
+            laptop.AddCommand("scan /secretariat", "Une vulnérabilité a été detectée sur le pc du secrétariat numéro 2");
+            laptop.AddCommand("hack", "Pc cible non précisé");
+            laptop.AddCommand("hack/", "erreur de syntaxe dans la commande hack");
+            laptop.AddCommand("hack /", "Pc cible non précisé");
+            laptop.AddCommand("hack /pcSecr1", "Aucune vulnérabilité connue trouvée sur ce pc");
+            laptop.AddCommand("hack /pcSecr2", "Vous avez piraté le pc numéro 2 du secrétariat et vous en avez pris le contrôle. Désormais les commandes que vous tapez seront directement executée sur le pc du secrétariat. Vous allez donc pouvoir continuer votre progression dans le réseau de l'entreprise en remontant chaque étage jusqu'à l'ordinateur du directeur.", PC.Secretariat());
+            laptop.AddCommand("hack /pcSecr3", "Aucune vulnérabilité connue trouvée sur ce pc");
+            laptop.AddCommand("", "");
+            // autres commandes
+
+            return laptop;
+        }
+
+        private static PC Secretariat()
+        {
+            PC secretariat = new PC();
+
+            return secretariat;
         }
     }
 }
