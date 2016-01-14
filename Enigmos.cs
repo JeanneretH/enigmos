@@ -80,6 +80,8 @@ namespace Cpln.Enigmos
         /// <param name="e">Les évènements liés au clic</param>
         private void Validate(object sender, EventArgs e)
         {
+            AcceptButton = active.ReturnHandler != null ? active.ReturnHandler : btnValidate;
+            
             if (active.CheckAnswer(tbxAnswer.Text))
             {
                 solved.Add(active.Title);
@@ -207,6 +209,8 @@ namespace Cpln.Enigmos
 
             ActiveControl = enigma;
             enigma.Load();
+            AcceptButton = active.ReturnHandler != null ? active.ReturnHandler : btnValidate;
+
 
             lblId.Text = active.Title;
         }

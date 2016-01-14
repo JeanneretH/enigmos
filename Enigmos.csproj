@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Enigmas\Components\Command.cs" />
     <Compile Include="Enigmas\Components\PC.cs" />
-    <Compile Include="Enigmas\HackingEnigmaPanel.cs" />
+    <Compile Include="Enigmas\HackingEnigmaPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Enigmas\SeptDifferencesEnigmaPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -145,6 +147,8 @@
     <Content Include="enigmas.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\Reseau.PNG" />
+    <None Include="Resources\Hacking.JPG" />
     <None Include="img\image2.PNG" />
     <None Include="img\image1.PNG" />
     <None Include="Resources\OpenDoor - Solution.png" />

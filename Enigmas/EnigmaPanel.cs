@@ -8,6 +8,9 @@ namespace Cpln.Enigmos.Enigmas
     /// </summary>
     public abstract class EnigmaPanel : Panel
     {
+        public IButtonControl ReturnHandler { get; set; }
+        
+
         /// <summary>
         /// Constructeur par défaut, fixe la taille du Panel à 800x600 et la couleur de fond à blanc.
         /// </summary>

@@ -12,9 +12,13 @@ namespace Cpln.Enigmos.Enigmas
     class HackingEnigmaPanel : EnigmaPanel
     {
         private PC pcCourant;
+        private List<String> CommandesEcrites = new List<String>();
 
-        Label lblConsole = new Label();
+        Label lblEcranLaptop = new Label();
         TextBox tbxConsole = new TextBox();
+        Button btnValider = new Button();
+        PictureBox pbxEcranPc = new PictureBox();
+        
 
         
         public HackingEnigmaPanel()
@@ -22,29 +26,56 @@ namespace Cpln.Enigmos.Enigmas
             Width = 1000;
             Height = 800;
             this.pcCourant = PC.Laptop();
+            this.BackgroundImage = Properties.Resources.Hacking;
+            this.Width = Properties.Resources.Hacking.Width;
+            this.Height = Properties.Resources.Hacking.Height;
 
-            Controls.Add(lblConsole);
-            lblConsole.Size = new Size(900, 600);
-            lblConsole.Font = new Font("Courier New", 20);
-            lblConsole.Location = new Point(50, 50);
-            lblConsole.Text = "8";
-            lblConsole.BackColor = Color.Black;
-            lblConsole.ForeColor = Color.White;
+            Controls.Add(lblEcranLaptop);
+            lblEcranLaptop.Size = new Size(360, 165);
+            lblEcranLaptop.Font = new Font("Courier New", 12);
+            lblEcranLaptop.Location = new Point(225, 315);
+            lblEcranLaptop.BackColor = Color.Transparent;
+            lblEcranLaptop.ForeColor = Color.White;
 
             Controls.Add(tbxConsole);
-            tbxConsole.Size = new Size(900, 20);
+            tbxConsole.Size = new Size(360, 120);
             tbxConsole.Font = new Font("Courrier New", 20);
-            tbxConsole.Location = new Point(50, 650);
+            tbxConsole.Location = new Point(225, 480);
             tbxConsole.BackColor = Color.Black;
             tbxConsole.ForeColor = Color.White;
+
+            Controls.Add(pbxEcranPc);
+            pbxEcranPc.Size = new Size(412, 333);
+            pbxEcranPc.BackgroundImage = Properties.Resources.Reseau;
+            pbxEcranPc.Location = new Point(695, 125);
+
+            btnValider.Click += new EventHandler(Valider);
+            ReturnHandler = btnValider;
+        }
+        public void AddCommandesEcrites(string ligne)
+        {
+            string[] lignes = ligne.Split(new string[] { "\n" },StringSplitOptions.None);
+            foreach (string l in lignes)
+            {
+                CommandesEcrites.Add(l);
+            }
+            while (CommandesEcrites.Count > 8)
+            {
+                CommandesEcrites.RemoveAt(0);
+            }
         }
 
-        public override void PressKey(object sender, KeyEventArgs e)
+        private void Valider(object sender, EventArgs e)
         {
-            switch(e.KeyCode)
+            Command command = pcCourant.GetCommand(tbxConsole.Text);
+            if (false)
             {
 
             }
+            this.AddCommandesEcrites("root@enigmos#~ " + tbxConsole.Text);
+            this.AddCommandesEcrites(command.getResultat());
+            tbxConsole.Text = "";
+            lblEcranLaptop.Text = string.Join("\n", CommandesEcrites);
         }
     }
 }

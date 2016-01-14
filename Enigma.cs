@@ -104,6 +104,18 @@ namespace Cpln.Enigmos
             }
         }
 
+        public IButtonControl ReturnHandler
+        {
+            get
+            {
+                return enigmaPanel.ReturnHandler;
+            }
+            set
+            {
+                enigmaPanel.ReturnHandler = value;
+            }
+        }
+
         /// <summary>
         /// Constructeur permettant de créer une nouvelle énigme.
         /// </summary>
