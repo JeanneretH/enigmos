@@ -36,7 +36,7 @@ namespace Cpln.Enigmos.Enigmas
             lblEcranLaptop.Location = new Point(225, 315);
             lblEcranLaptop.BackColor = Color.Transparent;
             lblEcranLaptop.ForeColor = Color.White;
-            lblEcranLaptop.Text = "Vous vous êtes introduit dans le réseau de l'entreprise. Vous pouvez donc le scanner.\nLe fichier à récupèrer se trouve sur le pc du directeur.\nVous allez devoir remonter le réseau pour le pirater.\nroot@enigmos#~ ";
+            lblEcranLaptop.Text = "Vous vous êtes introduit dans le réseau de l'entreprise. Vous pouvez donc le scanner.\nLe fichier à récupérer se trouve sur le pc du directeur.\nVous allez devoir remonter le réseau pour le pirater.\nroot@enigmos#~ ";
 
             Controls.Add(tbxConsole);
             tbxConsole.Size = new Size(360, 120);

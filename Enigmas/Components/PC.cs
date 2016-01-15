@@ -56,13 +56,13 @@ namespace Cpln.Enigmos.Enigmas.Components
         {
             PC laptop = new PC();
 
-            laptop.AddCommand("help", "Liste des commandes :\nhelp\nscan /le nom de ce que vous voulez scanner\nex: /reseau ou /comptabilité\nhack /*le nom du pc cible");
-            laptop.AddCommand("scan", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /reseau");
-            laptop.AddCommand("scan/", "Erreur de syntaxe de la commande scan \nexemple: /reseau");
-            laptop.AddCommand("scan /", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /reseau");
-            laptop.AddCommand("scan /reseau", "Scan du reseau terminé.\nQue voulez-vous scanner ?\nexemple: scan /home");
+            laptop.AddCommand("help", "Liste des commandes :\nhelp\nscan /le nom de ce que vous voulez scanner\nex: /réseau ou /comptabilité\nhack /*le nom du pc cible");
+            laptop.AddCommand("scan", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /réseau");
+            laptop.AddCommand("scan/", "Erreur de syntaxe de la commande scan \nexemple: /réseau");
+            laptop.AddCommand("scan /", "Veuillez indiquer ce que vous voulez scanner ! \nexemple: /réseau");
+            laptop.AddCommand("scan /réseau", "Scan du réseau terminé.\nQue voulez-vous scanner ?\nexemple: scan /home");
             laptop.AddCommand("scan /home", "Groupe de travail inconnu.\nEssayez la liste de droite.");
-            laptop.AddCommand("scan /secretariat", "Une vulnérabilité a été detectée\nsur le pc du secrétariat numéro 2");
+            laptop.AddCommand("scan /secretariat", "Une vulnérabilité a été détectée\nsur le pc du secrétariat numéro 2");
             laptop.AddCommand("hack", "Pc cible non précisé");
             laptop.AddCommand("hack/", "erreur de syntaxe dans la commande hack");
             laptop.AddCommand("hack /", "Pc cible non précisé");
@@ -70,7 +70,7 @@ namespace Cpln.Enigmos.Enigmas.Components
             laptop.AddCommand("hack /pcSecr2", "Vous avez piraté le pc numéro 2 du secrétariat\net vous en avez pris le contrôle. \nDésormais les commandes que vous\ntapez seront directement executée sur le pc du secrétariat. Vous allez donc pouvoir continuer votre progression dans le réseau de l'entreprise en remontant chaque étage jusqu'à l'ordinateur du directeur.", PC.Secretariat());
             laptop.AddCommand("hack /pcSecr3", "Aucune vulnérabilité connue trouvée sur ce pc");
             laptop.AddCommand("getSacha()", "vous saurez tout sur les sachas, les gros les gros les gros les gros les gros");
-            laptop.AddCommand("hack /USA", "Bien joué tu piratés les états-unis !");
+            laptop.AddCommand("hack /USA", "Bien joué tu as piraté les Etats-Unis !");
             laptop.AddCommand("", "");
             // autres commandes
 
